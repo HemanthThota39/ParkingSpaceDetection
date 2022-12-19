@@ -57,7 +57,7 @@ def onkeypress(event):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('video_path', help="Path of video file")
+    parser.add_argument('image_path', help="Path of image file")
     parser.add_argument('--out_file', help="Name of the output file", default="regions.p")
     args = parser.parse_args()
 
@@ -73,18 +73,18 @@ if __name__ == '__main__':
     print("> After marking a quadrilateral press 'n' to save current quadrilateral and then press 'q' to start marking a new quadrilateral")
     print("> When you are done press 'b' to Exit the program\n")
     
-    IMAGE_PATH = args.video_path
+    IMAGE_PATH = args.image_path
     cnt=0
     rgb_image = cv2.imread(IMAGE_PATH)
     rgb_image = rgb_image[:, :, ::-1]
-    # while video_capture.isOpened():
-    #     success, frame = video_capture.read()
+    # while image_capture.isOpened():
+    #     success, frame = image_capture.read()
     #     if not success:
     #         break
     #     if cnt == 5:
     #         rgb_image = frame[:, :, ::-1]
     #     cnt += 1
-    # video_capture.release()
+    # image_capture.release()
         
     while True:
         fig, ax = plt.subplots()
