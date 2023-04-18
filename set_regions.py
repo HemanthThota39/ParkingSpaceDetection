@@ -47,6 +47,14 @@ def break_loop(event):
 
 def onkeypress(event):
     global points, prev_points, total_points
+    global patches
+    global points
+    if event.key == 'q':
+        print("New quadrilateral: points =", len(points))
+        points = []
+
+    if event.key == 'q':
+        patches = []
     if event.key == 'n': 
         pts = np.array(points, dtype=np.int32)   
         if points != prev_points and len(set(points)) == 4:
